@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="BMX.INC - Bots, Automation & Digital Power. WhatsApp Bots, AI Automation and Social Growth Tools.">
+<meta name="keywords" content="BMX INC, WhatsApp Bot, Automation, AI Bots, Kenya Developer">
+<meta name="author" content="Warren Musungu">
+
+<title>BMX.INC | Bots & Automation</title>
+
+<link rel="manifest" href="manifest.json">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins',sans-serif;}
+
+body{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#0b0b1a;
+  overflow:hidden;
+  transition:0.4s;
+  color:white;
+}
+
+/* PARTICLE BACKGROUND */
+canvas{
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
+}
+
+/* CARD */
+.card{
+  width:100%;
+  max-width:420px;
+  padding:30px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(15px);
+  border:1px solid rgba(255,255,255,0.15);
+  box-shadow:0 0 40px rgba(0,255,231,0.2);
+  text-align:center;
+  animation:fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(30px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+h1{
+  font-size:2.6em;
+  color:#00ffe7;
+  text-shadow:0 0 15px rgba(0,255,231,0.7);
+}
+
+.typing{
+  margin-top:10px;
+  font-size:1.1em;
+  height:25px;
+  color:#ccc;
+}
+
+.email{
+  display:inline-block;
+  margin:20px 0;
+  color:#ffb7a5;
+  text-decoration:none;
+}
+
+.buttons{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.button{
+  padding:14px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:600;
+  color:#00ffe7;
+  border:2px solid #00ffe7;
+  transition:0.3s;
+}
+
+.button:hover{
+  background:#00ffe7;
+  color:#0b0b1a;
+  transform:translateY(-4px);
+  box-shadow:0 10px 25px rgba(0,255,231,0.6);
+}
+
+/* TOGGLE BUTTON */
+.toggle{
+  position:absolute;
+  top:20px;
+  right:20px;
+  padding:8px 14px;
+  border-radius:20px;
+  cursor:pointer;
+  background:#00ffe7;
+  color:#000;
+  font-weight:600;
+  border:none;
+}
+
+/* LIGHT MODE */
+.light{
+  background:#f5f5f5;
+  color:#111;
+}
+
+.light .card{
+  background:white;
+  border:1px solid #ddd;
+  box-shadow:0 0 25px rgba(0,0,0,0.1);
+}
+
+.light .button{
+  border:2px solid #111;
+  color:#111;
+}
+
+.light .button:hover{
+  background:#111;
+  color:white;
+}
+
+footer{
+  margin-top:25px;
+  font-size:0.8em;
+  opacity:0.8;
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<button class="toggle" onclick="toggleMode()">Toggle Mode</button>
+
+<div class="card">
+  <h1>BMX.INC</h1>
+  <div class="typing" id="typing"></div>
+
+  <a class="email" href="mailto:musunguwarren1@gmail.com">
+    📧 musunguwarren1@gmail.com
+  </a>
+
+  <div class="buttons">
+    <a class="button" href="https://whatsapp.com/channel/0029VbC06Bw9sBI0FonlN53w" target="_blank">📢 WhatsApp Channel</a>
+    <a class="button" href="https://www.youtube.com/@BMXINCBOT" target="_blank">▶️ YouTube Channel</a>
+    <a class="button" href="https://wa.me/message/VRZ5QLDAHXKSF1" target="_blank">☎️ Contact Developer</a>
+    <a class="button" href="#">👨‍💻 Telegram Info</a>
+    <a class="button" href="https://www.instagram.com/ljwarren254" target="_blank">👿 Instagram</a>
+    <a class="button" href="https://facebook.com" target="_blank">🤎 Facebook</a>
+  </div>
+
+  <footer>
+    © 2026 BMX.INC <br>
+    Made with 🤍 by Warren Musungu
+  </footer>
+</div>
+
+<script>
+/* DARK / LIGHT MODE */
+function toggleMode(){
+  document.body.classList.toggle("light");
+}
+
+/* TYPING EFFECT */
+const words=["Bots","Automation","AI Power","Digital Tools","Next Level Tech"];
+let i=0,j=0,currentWord="",isDeleting=false;
+function type(){
+  currentWord=words[i];
+  if(!isDeleting){
+    document.getElementById("typing").textContent=currentWord.substring(0,j++);
+    if(j>currentWord.length){isDeleting=true;setTimeout(type,1000);return;}
+  }else{
+    document.getElementById("typing").textContent=currentWord.substring(0,j--);
+    if(j<0){isDeleting=false;i=(i+1)%words.length;}
+  }
+  setTimeout(type,100);
+}
+type();
+
+/* PARTICLES */
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+for(let i=0;i<80;i++){
+  particles.push({
+    x:Math.random()*canvas.width,
+    y:Math.random()*canvas.height,
+    r:Math.random()*2,
+    dx:(Math.random()-0.5),
+    dy:(Math.random()-0.5)
+  });
+}
+
+function draw(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle="#00ffe7";
+  particles.forEach(p=>{
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fill();
+    p.x+=p.dx;
+    p.y+=p.dy;
+  });
+  requestAnimationFrame(draw);
+}
+draw();
+
+/* PWA SERVICE WORKER */
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js');
+}
+</script>
+
+</body>
+</html>

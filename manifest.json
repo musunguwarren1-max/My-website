@@ -1,0 +1,9 @@
+{
+  "name": "BMX.INC",
+  "short_name": "BMX",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0b0b1a",
+  "theme_color": "#00ffe7",
+  "icons": []
+}
