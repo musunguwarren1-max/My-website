@@ -1,16 +1,22 @@
-function scrollToForm() {
-    document.getElementById("connect").scrollIntoView({ behavior: "smooth" });
+let members = [];
+
+function addMember() {
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+
+    if (name && phone) {
+        members.push({ name, phone });
+        displayMembers();
+        document.getElementById("name").value = "";
+        document.getElementById("phone").value = "";
+    }
 }
 
-document.getElementById("connectForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+function displayMembers() {
+    let list = document.getElementById("memberList");
+    list.innerHTML = "";
 
-    let number = document.getElementById("number").value;
-
-    // Fake pairing code for now
-    let pairingCode = Math.floor(100000 + Math.random() * 900000);
-
-    document.getElementById("response").innerHTML =
-        `<p>Your pairing code: <strong>${pairingCode}</strong></p>
-         <p>Please contact admin to complete connection.</p>`;
-});
+    members.forEach(member => {
+        list.innerHTML += `<li>${member.name} - ${member.phone}</li>`;
+    });
+}

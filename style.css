@@ -1,22 +1,19 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Arial;
     background: #0f172a;
     color: white;
 }
 
-/* NAVBAR */
 nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 15px 50px;
+    padding: 15px 40px;
     background: #111827;
 }
 
 nav .logo {
     font-weight: bold;
-    font-size: 20px;
     color: #22c55e;
 }
 
@@ -31,87 +28,24 @@ nav ul li a {
     text-decoration: none;
 }
 
-nav ul li a:hover {
-    color: #22c55e;
-}
-
-/* HERO */
 .hero {
     text-align: center;
     padding: 80px 20px;
     background: linear-gradient(to right, #111827, #1f2937);
 }
 
-.hero h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
+.section {
+    padding: 40px;
+    text-align: center;
 }
 
-.hero p {
-    color: #9ca3af;
-}
-
-/* LAYOUT */
-.container {
-    display: flex;
-    max-width: 1200px;
+.dashboard {
+    padding: 40px;
+    max-width: 600px;
     margin: auto;
-    padding: 40px 20px;
-    gap: 40px;
 }
 
-.content {
-    flex: 3;
-}
-
-.content article {
-    background: #1f2937;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-}
-
-.content article h2 a {
-    color: #22c55e;
-    text-decoration: none;
-}
-
-.content article p {
-    color: #9ca3af;
-}
-
-.featured {
-    border: 2px solid #22c55e;
-}
-
-/* SIDEBAR */
-.sidebar {
-    flex: 1;
-}
-
-.widget {
-    background: #1f2937;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-}
-
-.widget h3 {
-    margin-top: 0;
-    color: #22c55e;
-}
-
-.widget ul {
-    list-style: none;
-    padding: 0;
-}
-
-.widget ul li {
-    margin-bottom: 8px;
-    color: #9ca3af;
-}
-
-.widget input {
+input {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -119,19 +53,16 @@ nav ul li a:hover {
     border: none;
 }
 
-.widget button {
-    width: 100%;
-    padding: 10px;
+button {
+    padding: 10px 20px;
     background: #22c55e;
     border: none;
     font-weight: bold;
     cursor: pointer;
 }
 
-/* FOOTER */
 footer {
     text-align: center;
     padding: 20px;
     background: #111827;
-    margin-top: 40px;
 }
