@@ -5,60 +5,133 @@ body {
     color: white;
 }
 
+/* NAVBAR */
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px;
+    align-items: center;
+    padding: 15px 50px;
     background: #111827;
 }
 
-nav h1 {
+nav .logo {
+    font-weight: bold;
+    font-size: 20px;
     color: #22c55e;
 }
 
-button {
-    background: #22c55e;
-    border: none;
-    padding: 10px 20px;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 6px;
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
 }
 
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #22c55e;
+}
+
+/* HERO */
 .hero {
     text-align: center;
     padding: 80px 20px;
+    background: linear-gradient(to right, #111827, #1f2937);
 }
 
-.features {
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #9ca3af;
+}
+
+/* LAYOUT */
+.container {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+    gap: 40px;
 }
 
-.card {
+.content {
+    flex: 3;
+}
+
+.content article {
     background: #1f2937;
     padding: 20px;
-    border-radius: 10px;
-    width: 250px;
+    margin-bottom: 20px;
+    border-radius: 8px;
 }
 
-.form-section {
-    text-align: center;
-    padding: 60px 20px;
+.content article h2 a {
+    color: #22c55e;
+    text-decoration: none;
 }
 
-input {
-    padding: 12px;
-    width: 300px;
-    border-radius: 6px;
+.content article p {
+    color: #9ca3af;
+}
+
+.featured {
+    border: 2px solid #22c55e;
+}
+
+/* SIDEBAR */
+.sidebar {
+    flex: 1;
+}
+
+.widget {
+    background: #1f2937;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.widget h3 {
+    margin-top: 0;
+    color: #22c55e;
+}
+
+.widget ul {
+    list-style: none;
+    padding: 0;
+}
+
+.widget ul li {
+    margin-bottom: 8px;
+    color: #9ca3af;
+}
+
+.widget input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
     border: none;
-    margin-right: 10px;
 }
 
+.widget button {
+    width: 100%;
+    padding: 10px;
+    background: #22c55e;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* FOOTER */
 footer {
     text-align: center;
     padding: 20px;
     background: #111827;
+    margin-top: 40px;
 }
