@@ -1,10 +1,16 @@
-const cards=document.querySelectorAll(".card");
-window.addEventListener("scroll",()=>{
-  cards.forEach(card=>{
-    const pos=card.getBoundingClientRect().top;
-    if(pos<window.innerHeight-50){
-      card.style.opacity=1;
-      card.style.transform="translateY(0)";
-    }
-  });
+function scrollToForm() {
+    document.getElementById("connect").scrollIntoView({ behavior: "smooth" });
+}
+
+document.getElementById("connectForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let number = document.getElementById("number").value;
+
+    // Fake pairing code for now
+    let pairingCode = Math.floor(100000 + Math.random() * 900000);
+
+    document.getElementById("response").innerHTML =
+        `<p>Your pairing code: <strong>${pairingCode}</strong></p>
+         <p>Please contact admin to complete connection.</p>`;
 });
